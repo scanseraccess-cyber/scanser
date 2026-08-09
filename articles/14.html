@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model Ranking: How We Compare AI Writing Models · Scanser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="article-shell">
+  <a class="article-back" href="../index.html">&larr; Back to Scanser</a>
+  <span class="article-pill">Review</span>
+  <h1>Model Ranking: How We Compare AI Writing Models</h1>
+  <div class="article-date">July 25, 2026</div>
+  <div class="article-body">
+<p>The Model Ranking page summarizes, by model family, the average AI-detection rate and similarity rate observed after a standard rewrite pass.</p><h2>What "detection rate" means here</h2><p>The average probability score a mainstream AI detector assigned to a rewritten sample from that model family, across a broad set of test passages.</p><h2>What "similarity rate" means here</h2><p>The average match percentage returned by a standard plagiarism check on the same rewritten samples, reflecting how much of the output still overlaps with commonly indexed sources.</p><h2>Why the numbers move over time</h2><ul><li>Both detectors and underlying models are updated regularly, so relative rankings shift.</li><li>Results vary by subject area — technical writing and narrative writing don't behave identically.</li><li>Lower is better on both metrics; neither number alone tells the whole story, which is why both are shown side by side.</li></ul>
+  </div>
+</div>
+<script>
+  // Match whichever theme the user had set on the main app.
+  try {
+    var t = localStorage.getItem('scanser_theme');
+    if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) {}
+</script>
+</body>
+</html>
