@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scanser Admin</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Admin login screen only needs to center a single card — reuses the
+       existing .boot-loader flex-center layout from styles.css. */
+    #app { min-height: 100vh; }
+  </style>
+</head>
+<body>
+
+  <div id="app"></div>
+  <div id="toast-container"></div>
+  <div id="modal-container" class="modal-backdrop"></div>
+
+  <!-- This flag is read by js/app.js at boot: it skips the public WeChat
+       home entirely and goes straight to the hardcoded admin login gate.
+       admin.html is never linked from index.html/app.js — reaching this
+       page at all requires typing /admin.html directly. -->
+  <script>window.SCANSER_ADMIN_MODE = true;</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/dataLayer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
