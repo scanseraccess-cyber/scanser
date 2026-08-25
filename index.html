@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一触即改 · Scanser</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css?v=20260816">
+</head>
+<body>
+
+  <div id="app"></div>
+  <div id="toast-container"></div>
+  <div id="modal-container" class="modal-backdrop"></div>
+  <div id="command-palette" class="cmdk-backdrop"></div>
+  <div id="demo-status-chip" class="demo-status-chip"></div>
+  <div id="wechat-status-chip" class="demo-status-chip wechat-status-chip"></div>
+
+  <!-- Supabase JS (UMD build — works with plain <script> tags, no bundler needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <!-- QR code renderer, used to draw the WeChat sign-in QR client-side (see js/app.js, WeChatAuth) -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <!-- Client-side text extraction for uploaded documents (used by the
+       See AI Report / See Plagiarism Report upload tools so the real text
+       — not just the filename — gets sent for checking). -->
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+  <script>
+    // Point pdf.js at its worker bundle on the same CDN.
+    if (window.pdfjsLib) {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mammoth@1.6.0/mammoth.browser.min.js"></script>
+  <script src="js/supabaseClient.js?v=20260816"></script>
+  <script src="js/dataLayer.js?v=20260816"></script>
+  <script src="articles/manifest.js"></script>
+  <script src="js/app.js?v=20260816"></script>
+  <script src="js/disable-devtools.js?v=20260816"></script>
+</body>
+</html>
